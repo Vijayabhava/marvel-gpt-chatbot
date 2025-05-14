@@ -1,0 +1,235 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Comic Neue', 'Bangers', cursive, sans-serif;
+  background: radial-gradient(circle, #ff0000 0%, #4b0000 100%);
+  color: #fff;
+  overflow: hidden;
+}
+
+/* Video Background Optional */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  object-fit: cover;
+  filter: brightness(0.3);
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Header */
+header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+header img {
+  height: 60px;
+}
+
+header h1 {
+  font-size: 2.2rem;
+  text-shadow: 2px 2px #000;
+  color: #ffe600;
+}
+
+/* Chat Wrapper */
+.chat-wrapper {
+  background: #fff;
+  border: 5px solid #000;
+  border-radius: 10px;
+  padding: 20px;
+  width: 100%;
+  max-width: 700px;
+  box-shadow: 0 0 25px #ff0, 0 0 50px #ff0;
+  position: relative;
+}
+
+/* Chat Box */
+.chat-box {
+  height: 400px;
+  overflow-y: auto;
+  background: repeating-linear-gradient(
+    45deg,
+    #f0f0f0,
+    #f0f0f0 10px,
+    #ffffff 10px,
+    #ffffff 20px
+  );
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 3px solid #222;
+}
+
+.message {
+  margin: 10px 0;
+  padding: 10px 15px;
+  border-radius: 8px;
+  max-width: 80%;
+  line-height: 1.5;
+  font-size: 1.1rem;
+}
+
+.message.user {
+  background: #ff4136;
+  color: #fff;
+  align-self: flex-end;
+  border: 3px solid #000;
+  box-shadow: 3px 3px #222;
+}
+
+.message.bot {
+  background: #ffe600;
+  color: #000;
+  align-self: flex-start;
+  border: 3px solid #000;
+  box-shadow: 3px 3px #222;
+}
+
+/* Input Area */
+.input-area {
+  display: flex;
+  gap: 10px;
+}
+
+.input-area input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  border: 3px solid #000;
+  font-size: 1rem;
+  background: #fff;
+  box-shadow: 2px 2px #222;
+}
+
+.input-area button {
+  padding: 12px 20px;
+  background: #000;
+  color: #ffe600;
+  font-weight: bold;
+  border: 3px solid #ffe600;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 3px 3px #222;
+  transition: all 0.2s ease-in-out;
+}
+
+.input-area button:hover {
+  background: #ffe600;
+  color: #000;
+  transform: scale(1.05);
+}
+
+/* Scrollbar Custom */
+.chat-box::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chat-box::-webkit-scrollbar-thumb {
+  background: #000;
+  border-radius: 5px;
+}
+/* Image Messages */
+.message.image {
+  background: #fffbe6;
+  border: 3px solid #222;
+  border-radius: 10px;
+  padding: 12px;
+  box-shadow: 4px 4px 0 #000;
+  margin: 15px 0;
+  color: #000;
+}
+
+.message.image img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-top: 8px;
+  border: 2px solid #000;
+  box-shadow: 5px 5px 0 #ff4136;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.message.image img:hover {
+  transform: scale(1.05);
+  box-shadow: 8px 8px 0 #ff4136;
+}
+
+.message.image p {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+/* Mode Toggle Styling */
+.mode-toggle {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #000;
+}
+
+.mode-toggle input[type='checkbox'] {
+  margin-right: 8px;
+  transform: scale(1.3);
+  accent-color: #ff4136;
+}
+
+/* Responsive Fixes */
+@media (max-width: 600px) {
+  .chat-wrapper {
+    padding: 15px;
+  }
+
+  .chat-box {
+    height: 300px;
+  }
+
+  .input-area input {
+    font-size: 0.9rem;
+  }
+
+  .message {
+    font-size: 1rem;
+  }
+
+  .message.image img {
+    max-height: 250px;
+    object-fit: cover;
+  }
+}
+.input-area button:last-child {
+  background: #ff4136;
+  color: #fff;
+  border: 3px solid #000;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.input-area button:last-child:hover {
+  background: #fff;
+  color: #ff4136;
+  border-color: #ff4136;
+  transform: scale(1.05);
+}
